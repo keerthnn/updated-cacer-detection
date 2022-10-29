@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>lung Cancer Recurrence Prediction</title>
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <img src="static/css/logo2.jpg" alt="logo">
+            <h1>
+                LUNG CANCER RISK ASSESSMENT
+            </h1>
+        </div>
+        <div class="wrapper">
+            <form action="{{ url_for('predict')}}" method="POST">
+                <h3 class="h3">USER DETAILS:</h3>
+                <div class="input_fields inline">
+                    <label>Age</label>
+                    <input name="age" type="number" min="21" max="87" required>
+                </div>
+
+                <div class="input_fields inline">
+                    <label>GENDER</label>
+                    <select name="gender">
+                        <option value="1">M</option>
+                        <option value="2">F</option>
+                    </select>
+                </div>
+
+                <div class="input_fields inline">
+                    <label>SMOKING</label>
+                    <select name="smoke">
+                        <option value="1">YES</option>
+                        <option value="2">NO</option>
+                    </select>
+                </div>
+
+
+                <div class="input_fields inline">
+                    <label>YELLOW_FINGERS</label>
+                    <select name="yellow">
+                        <option value="1">YES</option>
+                        <option value="2">NO</option>
+                    </select>
+                </div>
+
+                <div class="input_fields inline">
+                    <label>ANXIETY</label>
+                    <select name="anxiety">
+                        <option value="1">YES</option>
+                        <option value="2">NO</option>
+                    </select>
+                </div>
+
+                <div class="input_fields inline">
+                    <label>PEER_PRESSURE</label>
+                    <select name="peer">
+                        <option value="1">YES</option>
+                        <option value="2">NO</option>
+                    </select>
+                </div>
+
+                <div class="input_fields inline">
+                    <label>CHRONIC DISEASE</label>
+                    <select name="cronic">
+                        <option value="1">YES</option>
+                        <option value="2">NO</option>
+                    </select>
+                </div>
+
+                <div class="input_fields inline">
+                    <label>FATIGUE </label>
+                    <select name="fatigue">
+                        <option value="1">YES</option>
+                        <option value="2">NO</option>
+                    </select>
+                </div>
+
+                <div class="input_fields inline">
+                    <label>ALLERGY </label>
+                    <select name="allergy">
+                        <option value="1">YES</option>
+                        <option value="2">NO</option>
+                    </select>
+                </div>
+
+                <div class="input_fields inline">
+                    <label>WHEEZING</label>
+                    <select name="wheezing">
+                        <option value="1">YES</option>
+                        <option value="2">NO</option>
+                    </select>
+                </div>
+
+                <div class="input_fields inline">
+                    <label>ALCOHOL CONSUMING</label>
+                    <select name="alcohol">
+                        <option value="1">YES</option>
+                        <option value="2">NO</option>
+                    </select>
+                </div>
+
+                <div class="input_fields inline">
+                    <label>COUGHING</label>
+                    <select name="COUGHING">
+                        <option value="1">YES</option>
+                        <option value="2">NO</option>
+                    </select>
+                </div>
+
+                <div class="input_fields inline">
+                    <label>SHORTNESS OF BREATH</label>
+                    <select name="breath">
+                        <option value="1">YES</option>
+                        <option value="2">NO</option>
+                    </select>
+                </div>
+
+          
+
+                <div class="input_fields inline">
+                    <label>SWALLOWING DIFFICULTY</label>
+                    <select name="swallow">
+                        <option value="1">YES</option>
+                        <option value="2">NO</option>
+                    </select>
+                </div>
+
+                <div class="input_fields inline">
+                    <label>CHEST PAIN</label>
+                    <select name="chest pain">
+                        <option value="1">YES</option>
+                        <option value="2">NO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="CHECK">
+            </div>
+               
+            </form>
+        </div>
+        <div class="res">
+                {{prediction_text}}
+        </div>
+    </body>
+</html>
